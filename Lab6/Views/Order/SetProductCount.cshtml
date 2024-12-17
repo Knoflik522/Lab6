@@ -1,0 +1,12 @@
+﻿<h2>Введіть кількість товарів</h2>
+<form asp-action="SetProductCount" method="post">
+    <label for="count">Кількість товарів:</label>
+    <input type="number" name="count" class="form-control" min="1" required />
+    <br />
+    <button type="submit" class="btn btn-primary">Підтвердити</button>
+</form>
+
+@if (!ViewData.ModelState.IsValid)
+{
+    <p class="text-danger">Помилка: @ViewData.ModelState[""].Errors[0].ErrorMessage</p>
+}
